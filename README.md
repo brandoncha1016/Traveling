@@ -17,18 +17,20 @@
  - PIL (pillow)
  - pymysql
 ```
-## Demo
+## Demo 
+#### *아래 화면 클릭 시, 동영상 링크로 이동
 [<img src="https://j.gifs.com/nx4OWp.gif" width="70%">](https://youtu.be/mKtKysbJzJg)
 
--------
-도커 설정 및 DB연결 (Docker & DB setting)
-Docker 실행환경
 
+## Docker & DB setting
+#### 도커 설정 및 DB연결 
+**Docker 실행환경 (Docker QuickStart Shell**
+```
 docker pull mysql:5.7  # MYSQL이미지 다운로드 (mysql버전 = 5.7)
 docker images # 설치한 이미지 확인
 docker run --name mysql5 -e MYSQL_ROOT_PASSWORD=password -d -p 3306:3306 mysql:5.7 #컨테이너 생성/실행
 docker exec -it mysql5 bash #컨테이너 명령실행
-  
+```  
   @root#mysql -u root -p
   Enter Password : password
   
