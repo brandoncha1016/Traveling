@@ -60,7 +60,16 @@ docker exec -it mysql5 bash
  
   ![alt text](https://github.com/Cha-Euy-Sung/traveling_communities/blob/master/README/login1.png "로그인")
   
-  ![alt text](https://github.com/Cha-Euy-Sung/traveling_communities/blob/master/README/login_error.png "로그인에러")
+   신규계정 생성방법
+   - 사용할 아이디/비밀번호를 입력 후, '등록하기' 버튼 클릭
+   - 전화번호 항목은 양식에 맞게 입력하지 않을 시, 등록 불가 (ex. 000-0000-0000)
+   - 이미 생성된 아이디는 재사용불가 
+   
+   로그인 방법
+   - 등록된 계정 아이디/비밀번호 입력 후, '접속하기' 버튼 클릭
+   - 등록된 계정이 아닌 경우, 접속 불가 
+   
+   
 
 
 
