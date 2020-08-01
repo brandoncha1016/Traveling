@@ -1,0 +1,70 @@
+================================================================================================================================================
+## importing library 관련
+
+- webbrowser
+- PIL (Image, ImageTk) : 설치 명령어 -> pip install pillow
+- pymysql : 설치 명령어 ->  pip install pymysql
+
+================================================================================================================================================
+## DB connect info. (연결정보)
+
+  host='localhost',
+  port=3306,
+  user='admin',
+  password='password',
+  db='aidb',
+  charset='utf8',
+  cursorclass=pymysql.cursors.DictCursor)
+
+================================================================================================================================================
+
+## Creating Table 테이블생성
+
+CREATE TABLE CommunityMember (
+	id_ varchar(30) NOT NULL,
+	password_ varchar(25) Not NULL,
+	name varchar(20),
+	gender enum('남자','여자'),
+	contact varchar(30),
+	area varchar(12),
+	leader varchar(20) DEFAULT NULL,
+	membership json DEFAULT NULL,
+	PRIMARY KEY(id_)
+) CHARSET=utf8mb4;
+
+CREATE TABLE TravelClub (
+	clubName varchar(30) NOT NULL,
+	owner varchar(30) NOT NULL,
+	area varchar(12),
+	content varchar(100) DEFAULT NULL,
+	members json DEFAULT NULL,
+	PRIMARY KEY(clubName)
+)CHARSET=utf8mb4 ;
+
+
+CREATE TABLE DiscussionBoard (
+	clubName varchar(30) NOT NULL,
+	owner varchar(30) NOT NULL,
+	posting json DEFAULT NULL,
+	PRIMARY KEY(clubName)
+)CHARSET=utf8mb4 ;
+
+================================================================================================================================================
+
+## Inserting sample datum 샘플데이터 생성
+
+INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`leader`,`membership`) VALUES ('admin','password','차의성','남자','010-3308-2980','서울','SK인포섹',JSON_ARRAY('SK인포섹'));
+INSERT INTO TravelClub(clubName,owner,area,content,members) VALUES ("SK인포섹","admin","서울","인공지능반 화이팅 입니다",JSON_ARRAY('admin','kanga','songsong','bonobono','joohyun'));
+
+INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`leader`,`membership`) VALUES ('kanga','1234','강가연','여자','010-1234-1234','서울','제주도푸른밤',JSON_ARRAY('제주도푸른밤','SK인포섹'));
+INSERT INTO TravelClub(clubName,owner,area,content,members) VALUES ("제주도푸른밤","kanga","제주","이번 여름 제주바다로 떠나요",JSON_ARRAY('kanga','bonobono'));
+
+INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`leader`,`membership`) VALUES ('songsong','1234','송태경','남자','010-5678-5678','경북','부산갈매기',JSON_ARRAY('부산갈매기','SK인포섹'));
+INSERT INTO TravelClub(clubName,owner,area,content,members) VALUES ("부산갈매기","songsong","경북","다같이 해운대로 GOGO!",JSON_ARRAY('songsong'));
+
+INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`membership`) VALUES ('bonobono','1234','최보원','여자','02-331-2913','서울',JSON_ARRAY('제주도푸른밤','SK인포섹'));
+
+INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`leader`,`membership`) VALUES ('joohyun','1234','강주현','남자','010-1588-1588','충북','맛집을찾아서',JSON_ARRAY('맛집을찾아서','SK인포섹'));
+INSERT INTO TravelClub(clubName,owner,area,content,members) VALUES ('맛집을찾아서',"joohyun","서울","이번주는 삽겹살 먹으러갑니다",JSON_ARRAY("joohyun"));
+
+================================================================================================================================================
