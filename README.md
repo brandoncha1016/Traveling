@@ -2,7 +2,6 @@
 # <font color="red"> __Travel Community__ 여행 커뮤니티 관리 프로그램 구현 </font>
 
 ## 1. Introduction
-#### [ SK인포섹 클라우드 AI 융합 교육과정 MODULE PROJECT 1 ]
  
    - Python, MySQL, Docker 활용한 여행커뮤니티 관리 프로그램 구현
    - Tkinter 기반의 Graphic User Interface 구성 
