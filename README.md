@@ -81,7 +81,7 @@ CREATE TABLE TravelClub (
 
 ## Inserting sample datum
 
-INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`leader`,`membership`) VALUES ('admin','password','차의성','남자','010-3308-2980','서울','SK인포섹',JSON_ARRAY('SK인포섹'));
+INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`leader`,`membership`) VALUES ('admin','password','차의성','남자','010-1110-1111','서울','SK인포섹',JSON_ARRAY('SK인포섹'));
 INSERT INTO TravelClub(clubName,owner,area,content,members) VALUES ("SK인포섹","admin","서울","인공지능반 화이팅 입니다",JSON_ARRAY('admin','kanga','songsong','bonobono','joohyun'));
 
 INSERT INTO CommunityMember(`id_`,`password_`,`name`,`gender`,`contact`,`area`,`leader`,`membership`) VALUES ('kanga','1234','강가연','여자','010-1234-1234','서울','제주도푸른밤',JSON_ARRAY('제주도푸른밤','SK인포섹'));
